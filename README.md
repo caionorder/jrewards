@@ -44,6 +44,7 @@ To build the tag from source:
 ```bash
 npm install
 npm run dev
+http-server . -p 5173
 ```
 
 The output JavaScript will be generated in the `dist/` folder, ready to be served.
