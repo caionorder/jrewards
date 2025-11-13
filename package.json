@@ -1,9 +1,10 @@
 {
   "name": "rewards",
   "version": "1.0.0",
-  "description": "rewards.js joinads ",
+  "description": "Groone Rewards",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack --config webpack.dev.js --mode development --watch",
     "test": "jest",
     "build": "webpack --config webpack.config.js",
     "build:types": "tsc --emitDeclarationOnly",

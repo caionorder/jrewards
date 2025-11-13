@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Demo Rewards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <script>
+    (function () {
+      const listeners = {}; 
+
+      function emit(name, payload) {
+        (listeners[name] || []).forEach(fn => {
+          try { fn(payload); } catch (e) { console.error('[googletag stub]', e); }
+        });
+      }
+
+      const api = {
+        cmd: [],
+        enums: { OutOfPageFormat: { REWARDED: 'REWARDED' } },
+        pubads() {
+          return {
+            addEventListener(name, cb) {
+              (listeners[name] ||= []).push(cb);
+            }
+          };
+        },
+        defineOutOfPageSlot(path, format) {
+          return {
+            __path: path,
+            __format: format,
+            addService() { return this; }
+          };
+        },
+        enableServices() {},
+        display(slotOrId) {
+          setTimeout(() => {
+            const event = {          
+              makeRewardedVisible() {
+                emit('rewardedSlotGranted', { slot: slotOrId });
+                setTimeout(() => emit('rewardedSlotClosed', { slot: slotOrId }), 300);
+              }
+            };
+            emit('rewardedSlotReady', event);
+          }, 300);
+        },
+        destroySlots(){}
+      };
+
+      
+      window.googletag = api;
+      
+      function flushCmdQueue() {
+        const q = api.cmd.slice();
+        api.cmd.length = 0;
+        q.forEach(fn => { try { fn(); } catch (e) { console.error('[googletag stub cmd]', e); } });
+      }
+      
+      flushCmdQueue();
+      const _push = api.cmd.push.bind(api.cmd);
+      api.cmd.push = function (fn) { _push(fn); flushCmdQueue(); };
+    })();
+  </script>
+
+</head>
+<body>
+  
+  <div
+    groone="reward"
+    data-id="1"
+    data-client="614"
+  ></div>
+
+  <script src="../build-dev/jrewards.js" type="module"></script>
+</body>
+</html>

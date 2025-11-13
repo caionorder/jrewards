@@ -2,7 +2,7 @@ import { DOMUtil } from "./utils/dom-util";
 import { Rewards } from "./services/rewards";
 
 
-export default class JoinAdsRewards {
+export default class GrooneRewards {
     private Rewards!: Rewards;
     private domUtil = new DOMUtil();
 
@@ -10,16 +10,10 @@ export default class JoinAdsRewards {
         this.initializeServices();
     }
 
-    /**
-     * Inicializa todos os serviços necessários
-     */
     private initializeServices(): void {        
         this.Rewards = new Rewards();
     }
 
-    /**
-     * Métodos públicos para acesso externo aos managers
-     */
     public getRewards(): Rewards {
         return this.Rewards;
     }
@@ -28,4 +22,4 @@ export default class JoinAdsRewards {
     }
 }
 
-const joinAdsRewards = new JoinAdsRewards();
+const grooneRewards = new GrooneRewards();

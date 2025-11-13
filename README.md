@@ -24,20 +24,16 @@ It’s intended to allow teams to deploy and test rewards features without touch
 
 Simply embed the compiled tag on your page:
 
-```html
-<script src="https://script.joinads.me/jrewards.min.js" type="module"></script>
-
-<div joinadscode="AdRewarded" data-id="{ID_QUIZ}" data-domain="{DOMAIN}" data-subdomain="{SUBDOMAIN_SLOT}" data-network="{NETWORK_CODE}"  data-date="{DATE_SLOT}"></div>
-```
-
 ### Example:
 
-Simply install example in your `<body>`
-
 ```html
-<script src="https://script.joinads.me/jrewards.min.js" type="module"></script>
-<div joinadscode="AdRewarded" data-id="36" data-domain="setorreciclagem.com.br" data-subdomain="Setorreciclagem" data-network="3649630"  data-date="20240913"></div>
-```
+<script src="https://genius.groone.com/jrewards.min.js" type="module"></script>
+
+<div
+    groone="reward"
+    data-id="{id_reward}"
+    data-client="{id_client}"
+></div>
 
 ---
 
@@ -47,13 +43,9 @@ To build the tag from source:
 
 ```bash
 npm install
-npm run build
+npm run dev
 ```
 
 The output JavaScript will be generated in the `dist/` folder, ready to be served.
 
 ---
-
-## 📄 License
-
-MIT
