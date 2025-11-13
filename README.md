@@ -27,7 +27,7 @@ Simply embed the compiled tag on your page:
 ### Example:
 
 ```html
-<script src="https://genius.groone.com/jrewards.min.js" type="module"></script>
+<script src="https://genius.groone.com/rewards.min.js" type="module"></script>
 
 <div
     groone="reward"

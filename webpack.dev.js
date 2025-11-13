@@ -27,8 +27,8 @@ module.exports = (env, argv) => {
     resolve: { extensions: [".tsx", ".ts", ".js"] },
     output: {
       path: path.resolve(__dirname, "./build-dev"),
-      filename: isProd ? "jrewards.min.js" : "jrewards.js",
-      library: { name: "jRewards", type: "window", export: "default" },
+      filename: isProd ? "rewards.min.js" : "rewards.js",
+      library: { name: "Groone Rewards", type: "window", export: "default" },
     },
     optimization: { 
         minimize: false 

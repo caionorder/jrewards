@@ -26,10 +26,10 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: "jrewards.min.js",
+    filename: "rewards.min.js",
     path: path.resolve(__dirname, "./build"),
     library: {
-      name: "jRewards",
+      name: "Groone Rewards",
       type: "window", // Alterado para 'window' em vez de 'umd'
       export: "default",
     },
